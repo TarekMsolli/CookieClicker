@@ -1,34 +1,61 @@
 body{
     background-color: #212534;
 }
+
 .canv{
     margin: auto;
     border-radius: 8px;
 }
+
 .out{
     background-image: linear-gradient(#5ddcff, #3c67e3 43%, #4e00c2);
     height: 500px;
     width: 250px;
 }
-.in{
+
+.in1{
     background-color: #212534;
-    height: 490px;
+    height: 320px;
     width: 240px;
     position: relative;
     top: 5px;
     text-align: center;
 }
+
+.in2{
+    background-color: #212534;
+    height: 165px;
+    width: 240px;
+    position: relative;
+    top: 10px;
+    text-align: center;
+}
+
+.cookie-jar{
+    height: 200px;
+    width: 240px;
+    position: relative;
+    top: 20px;
+}
+
 .cookie{
     height: 200px;
     width: 200px;
     animation: rotation 30s infinite linear;
 }
+
+.cookie:active{
+    width: 180px;
+    height: 180px;
+}
+
 .counter{
     background: linear-gradient(#3c67e3 43%, #5ddcff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 300%;
 }
+
 @keyframes rotation {
     from {
       transform: rotate(0deg);
