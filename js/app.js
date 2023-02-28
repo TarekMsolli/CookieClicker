@@ -29,6 +29,7 @@ function addPoint(){
 }
 
 function addClick(){
+    POP.play();
     if (POINTSCOUNTER >= CLICKERPRICE){
         POINTSCOUNTER -= CLICKERPRICE;
         CLICKERCOUNTER += 1;
@@ -43,6 +44,7 @@ function addClickPrice(){
 }
 
 function addGrannie(){
+    POP.play();
     if (POINTSCOUNTER >= GRANNIEPRICE){
         POINTSCOUNTER -= GRANNIEPRICE;
         GRANNIECOUNTER += 1;
