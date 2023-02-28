@@ -8,6 +8,7 @@ CLICKER = document.querySelector("#clickers");
 CLICKERPRICETAG = document.querySelector("#clickers-price");
 GRANNIE = document.querySelector("#grannies");
 GRANNIEPRICETAG = document.querySelector("#grannies-price");
+CPS = document.querySelector("#cps");
 
 POINTSCOUNTER = 0;
 CLICKERCOUNTER = 0;
@@ -55,7 +56,15 @@ function addGranniePrice(){
 
 
 function showPoints(POINTS){
-    POINTS.innerText = POINTSCOUNTER;
+    if (POINTSCOUNTER < 1000){
+        POINTS.innerText = POINTSCOUNTER;
+    }
+    else if (POINTSCOUNTER < 1000000){
+        POINTS.innerText = `${(POINTSCOUNTER/1000).toFixed(3)}K`;
+    }
+    else{
+        POINTS.innerText = `${(POINTSCOUNTER/1000000).toFixed(3)}M`;
+    }
 }
 
 function showClickers(){
@@ -83,6 +92,7 @@ function showGrannniesPrice(){
 setInterval(()=>{
     POINTSCOUNTER += CLICKERCOUNTER * 5 + GRANNIECOUNTER * 100;
     showPoints(POINTS);
+    CPS.innerText = `Cps: ${CLICKERCOUNTER* 5 + GRANNIECOUNTER * 100}`;
 }, 1000);
 
 COOKIE.addEventListener("click", addPoint);
