@@ -68,19 +68,47 @@ function showPoints(POINTS){
 }
 
 function showClickers(){
-    CLICKER.innerText = `Clickers: ${CLICKERCOUNTER}`
+    if (CLICKERCOUNTER < 1000){
+        CLICKER.innerText = `Clickers: ${CLICKERCOUNTER}`
+    } else if (CLICKERCOUNTER < 1000000){
+        CLICKER.innerText = `Clickers: ${(CLICKERCOUNTER/1000).toFixed(3)}K`
+    }
+    else{
+        CLICKER.innerText = `Clickers: ${(CLICKERCOUNTER/1000000).toFixed(3)}M`
+    }
 }
 
 function showClickersPrice(){
-    CLICKERPRICETAG.innerText = `Clickers price: ${CLICKERPRICE}`
+    if (CLICKERPRICE < 1000){
+        CLICKERPRICETAG.innerText = `Clickers price: ${CLICKERPRICE}`
+    } else if (CLICKERPRICE < 1000000){
+        CLICKERPRICETAG.innerText = `Clickers price: ${(CLICKERPRICE/1000).toFixed(3)}K`
+    }
+    else{
+        CLICKERPRICETAG.innerText = `Clickers price: ${(CLICKERPRICE/1000000).toFixed(3)}M`
+    }
 }
 
 function showGrannies(){
-    GRANNIE.innerText = `Grannies: ${GRANNIECOUNTER}`
+    if (GRANNIECOUNTER < 1000){
+        GRANNIE.innerText = `Grannies: ${GRANNIECOUNTER}`
+    } else if (GRANNIECOUNTER < 1000000){
+        GRANNIE.innerText = `Grannies: ${(GRANNIECOUNTER/1000).toFixed(3)}K`
+    }
+    else{
+        GRANNIE.innerText = `Grannies: ${(GRANNIECOUNTER/1000000).toFixed(3)}M`
+    }
 }
 
 function showGrannniesPrice(){
-    GRANNIEPRICETAG.innerText = `Grannies price: ${GRANNIEPRICE}`
+    if (GRANNIEPRICE < 1000){
+        GRANNIEPRICETAG.innerText = `Grannies price: ${GRANNIEPRICE}`
+    } else if (GRANNIEPRICE < 1000000){
+        GRANNIEPRICETAG.innerText = `Grannies price: ${(GRANNIEPRICE/1000).toFixed(3)}K`
+    }
+    else{
+        GRANNIEPRICETAG.innerText = `Grannies price: ${(GRANNIEPRICE/1000000).toFixed(3)}M`
+    }
 }
 
 
