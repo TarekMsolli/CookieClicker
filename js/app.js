@@ -24,7 +24,6 @@ var POP = new Audio('audio/pop.mp3');
 
 function addPoint(){
     POINTSCOUNTER += 1;
-    showPoints(POINTS);
     POP.play();
 }
 
@@ -119,12 +118,13 @@ function showGrannniesPrice(){
 
 
 
-
+setInterval(()=>{
+    showPoints(POINTS);
+},10);
 
 
 setInterval(()=>{
     POINTSCOUNTER += CLICKERCOUNTER * 5 + GRANNIECOUNTER * 100;
-    showPoints(POINTS);
     CPS.innerText = `Cps: ${CLICKERCOUNTER* 5 + GRANNIECOUNTER * 100}`;
 }, 1000);
 

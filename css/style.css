@@ -1,5 +1,5 @@
 body {
-    background-color: bisque;
+    background-color: #151515;
     color: bisque;
 }
 .score-holder{
@@ -22,6 +22,11 @@ body {
     top: 15px;
     height: 245px;
     width: 245px;
+}
+
+.card{
+    border: solid 5px bisque;
+    border-radius: 15px;
 }
 
 @keyframes rotation {
