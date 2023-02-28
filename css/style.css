@@ -1,81 +1,25 @@
-body{
-    background-color: #212534;
+body {
+    background-color: #212121;
+    color: bisque;
 }
-
-.canv{
+.score-holder{
     margin: auto;
-    border-radius: 8px;
-}
-
-.out{
-    height: 500px;
-    width: 250px;
-    background-color: bisque;
-}
-
-.in1{
-    background-color: #212534;
-    height: 320px;
-    width: 240px;
-    position: relative;
-    top: 5px;
     text-align: center;
 }
 
-.in2{
-    background-color: #212534;
-    height: 165px;
-    width: 240px;
-    position: relative;
-    top: 10px;
+.cookie-container{
+    width: auto;
+    height: 260px;
+    text-align: center;
 }
 
-
-.cookie-jar{
-    height: 200px;
-    width: 240px;
-    position: relative;
-    top: 20px;
-}
-
-.cookie{
-    height: 200px;
-    width: 200px;
+.card-img-top{
     animation: rotation 30s infinite linear;
 }
 
-.cookie:active{
-    width: 180px;
-    height: 180px;
-}
-
-.counter{
-    background: #ffe4c4;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 300%;
-}
-
-.stats{
-    color: bisque;
-    font-size: large;
-}
-
-.click-auto{
-    height: 30px;
-    width: 30px;
-    border: bisque solid 4px;
-    background: #212534;
-    border-radius: 20%;
-    position: relative;
-    top: 5px;
-    left: 5px;
-    text-align:center;
-}
-
-.click-auto:active{
-    height: 25px;
-    width: 25px;
+.card-img-top:active{
+    height: 245px;
+    width: 245px;
 }
 
 @keyframes rotation {

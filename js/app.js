@@ -1,34 +1,90 @@
-var COUNTER = document.querySelector("#counter");
-var COOKIE = document.querySelector("#cookie");
-var POINTS = 0;
+POINTS = document.querySelector("#points")
+COOKIE = document.querySelector("#cookie")
 
-var AUTOCLICKER = document.querySelector("#click-auto");
-var AUTOCOUNTER = 0;
-var AUTOPRICE = 50;
+CLICKERBTN = document.querySelector("#clicker-btn");
+GRANNIEBTN = document.querySelector("#grannie-btn");
 
-var STATS = document.querySelector("#stats");
+CLICKER = document.querySelector("#clickers");
+CLICKERPRICETAG = document.querySelector("#clickers-price");
+GRANNIE = document.querySelector("#grannies");
+GRANNIEPRICETAG = document.querySelector("#grannies-price");
+
+POINTSCOUNTER = 0;
+CLICKERCOUNTER = 0;
+CLICKERPRICE = 50;
+GRANNIECOUNTER = 0;
+GRANNIEPRICE = 500;
+
+
+
+
 
 function addPoint(){
-    POINTS += 1;
-    COUNTER.innerText = POINTS;
+    POINTSCOUNTER += 1;
+    showPoints(POINTS);
 }
 
-function addClicker(){
-    if (POINTS >= AUTOPRICE){
-    POINTS -= AUTOPRICE;
-    AUTOCOUNTER += 1;
-    AUTOPRICE = AUTOPRICE * 2;
-    COUNTER.innerText = POINTS;
-    STATS.innerHTML = `<p>Auto clickers: ${AUTOCOUNTER}</p> <p>Price = ${AUTOPRICE}</p>`;
+function addClick(){
+    if (POINTSCOUNTER >= CLICKERPRICE){
+        POINTSCOUNTER -= CLICKERPRICE;
+        CLICKERCOUNTER += 1;
+        showClickers(CLICKER);
+        addClickPrice(CLICKERPRICE);
+        showClickersPrice(CLICKERPRICETAG);
     }
 }
 
+function addClickPrice(){
+    CLICKERPRICE += Math.floor(CLICKERPRICE / 3);
+}
+
+function addGrannie(){
+    if (POINTSCOUNTER >= GRANNIEPRICE){
+        POINTSCOUNTER -= GRANNIEPRICE;
+        GRANNIECOUNTER += 1;
+        showGrannies(GRANNIE);
+        addGranniePrice(GRANNIEPRICE);
+        showGrannniesPrice(GRANNIEPRICETAG);
+    }
+}
+
+function addGranniePrice(){
+    GRANNIEPRICE += Math.floor(GRANNIEPRICE / 3);
+}
+
+
+
+function showPoints(POINTS){
+    POINTS.innerText = POINTSCOUNTER;
+}
+
+function showClickers(){
+    CLICKER.innerText = `Clickers: ${CLICKERCOUNTER}`
+}
+
+function showClickersPrice(){
+    CLICKERPRICETAG.innerText = `Clickers price: ${CLICKERPRICE}`
+}
+
+function showGrannies(){
+    GRANNIE.innerText = `Grannies: ${GRANNIECOUNTER}`
+}
+
+function showGrannniesPrice(){
+    GRANNIEPRICETAG.innerText = `Grannies price: ${GRANNIEPRICE}`
+}
+
+
+
+
+
+
+
 setInterval(()=>{
-    POINTS += AUTOCOUNTER * 5;
-    COUNTER.innerText = POINTS;
-}, 2000);
-
-
+    POINTSCOUNTER += CLICKERCOUNTER * 5 + GRANNIECOUNTER * 100;
+    showPoints(POINTS);
+}, 1000);
 
 COOKIE.addEventListener("click", addPoint);
-AUTOCLICKER.addEventListener("click", addClicker)
+CLICKERBTN.addEventListener("click", addClick);
+GRANNIEBTN.addEventListener("click", addGrannie);
