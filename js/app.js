@@ -1,28 +1,31 @@
-POINTS = document.querySelector("#points")
-COOKIE = document.querySelector("#cookie")
-
-CLICKERBTN = document.querySelector("#clicker-btn");
-GRANNIEBTN = document.querySelector("#grannie-btn");
-
-CLICKER = document.querySelector("#clickers");
-CLICKERPRICETAG = document.querySelector("#clickers-price");
-GRANNIE = document.querySelector("#grannies");
-GRANNIEPRICETAG = document.querySelector("#grannies-price");
-CPS = document.querySelector("#cps");
-
-POINTSCOUNTER = 0;
-CLICKERCOUNTER = 0;
-CLICKERPRICE = 50;
-GRANNIECOUNTER = 0;
-GRANNIEPRICE = 500;
+var POINTS = document.querySelector("#points")
+var COOKIE = document.querySelector("#cookie")
 
 
+
+var CLICKERBTN = document.querySelector("#clicker-btn");
+var GRANNIEBTN = document.querySelector("#grannie-btn");
+
+var CLICKER = document.querySelector("#clickers");
+var CLICKERPRICETAG = document.querySelector("#clickers-price");
+var GRANNIE = document.querySelector("#grannies");
+var GRANNIEPRICETAG = document.querySelector("#grannies-price");
+var CPS = document.querySelector("#cps");
+
+var POINTSCOUNTER = 0;
+var CLICKERCOUNTER = 0;
+var CLICKERPRICE = 50;
+var GRANNIECOUNTER = 0;
+var GRANNIEPRICE = 500;
+
+var POP = new Audio('audio/pop.mp3');
 
 
 
 function addPoint(){
     POINTSCOUNTER += 1;
     showPoints(POINTS);
+    POP.play();
 }
 
 function addClick(){
